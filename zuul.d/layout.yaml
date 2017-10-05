@@ -6,3 +6,6 @@
       - tripleo-multinode-container-full
       - tripleo-multinode-experimental
       - tripleo-multinode-branchful
+    check:  # for testing to be removed before merging
+      jobs:
+        - tripleo-ci-centos-7-scenario011-multinode-oooq-container

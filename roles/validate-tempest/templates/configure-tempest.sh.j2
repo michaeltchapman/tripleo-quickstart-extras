@@ -97,7 +97,11 @@ source {{ rc_file }}
 {% if release == 'newton' %}
 public_net_id=$(neutron net-show {{ public_net_name }} -f value -c id)
 {% else %}
+{% if ironic_overcloud %}
+public_net_id=$(neutron net-show provisioning -f value -c id)
+{% else %}
 public_net_id=$(openstack network show {{ public_net_name }} -f value -c id)
+{% endif %}
 {% endif %}
 {% endif %}
 
