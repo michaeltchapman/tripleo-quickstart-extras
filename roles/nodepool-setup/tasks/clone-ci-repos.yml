@@ -22,7 +22,7 @@
     git config --global user.name "CI user"
 
 - include_tasks: patch_repos.yml
-  with_items: "{{ repos }}"
+  with_items: "{{ nodepool_repos }}"
   loop_control:
     loop_var: repo_item
 
